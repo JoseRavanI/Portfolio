@@ -1,0 +1,230 @@
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background-color: #e4ebe6;
+  color: #333;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+nav {
+  background-color: #191414;
+  color: #1ed760;
+  padding: 1rem;
+}
+
+/* 1db954 */
+/* 1ed760 */
+/* fff */
+/* 191414 */
+
+#logo {
+  transition: transform 0.3s ease, filter 0.3s ease;
+  cursor: pointer;
+  text-decoration: none;
+  list-style: none;
+  color: #1ed760;
+}
+
+#logo:hover {
+  filter: brightness(1.2) drop-shadow(0 2px 8px #1db954);
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-links a {
+  
+  color: #1ed760;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.nav-links a:hover {
+  filter: brightness(1.2) drop-shadow(0 2px 8px #1db954);
+}
+
+.main-container {
+  max-width: 980px; /* 1000px + 10px de cada lado = 1020px, ajuste conforme necessário */
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+  background: transparent;
+}
+
+section {
+  padding: 3rem 1rem;
+  text-align: center;
+}
+
+#sobre-mim .container {
+  max-width: 1000px;    /* Igual ao .nav-container */
+  margin: 0 auto;
+  text-align: left;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+#sobre-mim .container p {
+  max-width: 650px;     /* Limita largura só do texto */
+  margin-left: 0;
+  margin-right: auto;
+}
+
+.destaque {
+  color: #1ed760;
+  font-weight: bold;
+  background: linear-gradient(90deg, #1ed760 30%, #1db954 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-decoration: none;
+}
+
+.carousel-container {
+  width: 1260px; /* 3x 400px + 3x 20px gap */
+  margin: 0 auto;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.carousel {
+  overflow: hidden;
+  width: 1260px;
+}
+
+.carousel-track {
+  display: flex;
+  transition: transform 0.5s cubic-bezier(.77,0,.18,1);
+  will-change: transform;
+}
+
+.project-card {
+  background: #191414;
+  border: 2px solid #1ed760;
+  border-radius: 32px;         /* Mais arredondado */
+  width: 400px;
+  min-width: 400px;
+  height: 600px;
+  margin: 0 32px;              /* Espaçamento maior entre os cards */
+  box-sizing: border-box;
+  padding: 32px 24px 24px 24px;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+  box-shadow: 0 4px 24px #0002;
+}
+
+.project-card img {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+  border-radius: 24px;         /* Imagem também mais arredondada */
+  margin-bottom: 16px;
+}
+
+.project-card h3 {
+  margin: 16px 0 8px 0;
+  font-size: 2rem;
+  color: #1ed760;
+}
+
+.project-card p {
+  font-size: 1.1rem;
+  margin-bottom: 16px;
+}
+
+.more-info-btn {
+  background: #1ed760;
+  color: #191414;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 20px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-bottom: 10px;
+  transition: background 0.2s;
+}
+
+.more-info-btn:hover {
+  background: #1db954;
+}
+
+.more-info {
+  display: none;
+  background: #222;
+  border-radius: 8px;
+  padding: 12px;
+  margin-top: 8px;
+  font-size: 1rem;
+}
+
+.project-card.active {
+  transform: scale(1.08);
+  borderradius: 40px; /* Mais arredondado */
+  box-shadow: 0 8px 32px #1ed76044;
+  border-color: #1db954;
+  z-index: 2;
+}
+
+.carousel-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 56px;
+  width: 56px;
+  min-width: 56px;
+  margin: 0 24px;
+  background: #1ed760;      /* Verde claro */
+  color: #191414;           /* Seta preta */
+  border: none;
+  border-radius: 50%;       /* Totalmente arredondado */
+  font-size: 2.2rem;
+  cursor: pointer;
+  box-shadow: 0 2px 8px #0002;
+  transition: background 0.2s, color 0.2s, transform 0.2s;
+  z-index: 10;
+  position: relative;
+  top: 0;
+  transform: none;
+}
+
+.carousel-btn:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+.carousel-btn:hover:enabled {
+  background: #1db954;      /* Verde um pouco mais escuro no hover */
+  color: #191414;
+  transform: scale(1.08);
+}
+
+.linha-logos {
+  width: 100%;
+  overflow: hidden;
+  margin: 32px 0 0 0;
+  padding: 0;
+  height: 56px;
+  position: relative;
+  border-top: 2px solid #e0e0e0;
+  border-bottom: 2px solid #e0e0e0;
+  background: #f8f8f8;
+}
